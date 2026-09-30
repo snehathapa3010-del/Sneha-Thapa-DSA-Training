@@ -1,0 +1,545 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="100%" height="100%" style="background-color: #f8efe0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <!-- Background Blueprint Grid Pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#E2E8F0" stroke-width="1" />
+      <path d="M 20 0 L 20 40 M 0 20 L 40 20" fill="none" stroke="#EDF2F7" stroke-width="0.5" stroke-dasharray="2,2" />
+    </pattern>
+
+    <!-- Railway Track Schematic Pattern for Section 03 -->
+    <pattern id="trackPattern" width="30" height="20" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="10" x2="30" y2="10" stroke="#CBD5E1" stroke-width="1.5" />
+      <line x1="10" y1="5" x2="10" y2="15" stroke="#CBD5E1" stroke-width="1" />
+      <line x1="25" y1="5" x2="25" y2="15" stroke="#CBD5E1" stroke-width="1" />
+    </pattern>
+
+    <!-- Marker / Arrow Heads -->
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#3B82F6" />
+    </marker>
+    <marker id="arrow-dark" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#1E293B" />
+    </marker>
+    <marker id="arrow-copper" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#C2410C" />
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#059669" />
+    </marker>
+
+    <!-- Filters for Depth and Drop Shadows -->
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.06" />
+    </filter>
+    <filter id="shadow-md" x="-8%" y="-8%" width="116%" height="116%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#0F172A" flood-opacity="0.1" />
+    </filter>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="1600" height="900" fill="#f8efe0" />
+  <rect width="1600" height="900" fill="url(#grid)" />
+
+  <!-- Outer Header / Canvas Frame -->
+  <rect x="20" y="20" width="1560" height="860" rx="12" fill="none" stroke="#CBD5E1" stroke-width="1.5" />
+
+  <!-- ========================================================================= -->
+  <!-- MAIN ARCHITECTURE PIPELINE (TOP 80% LEVEL) -->
+  <!-- ========================================================================= -->
+
+  <!-- SECTION 01 — RAILWAY DATA SOURCES -->
+  <g id="sec-01">
+    <rect x="40" y="45" width="190" height="645" rx="8" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.5" filter="url(#shadow)" />
+    <rect x="40" y="45" width="190" height="36" rx="8" fill="#0F172A" />
+    <rect x="40" y="70" width="190" height="11" fill="#0F172A" />
+    <text x="135" y="68" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="0.5">SECTION 01</text>
+    <text x="135" y="98" font-size="12" font-weight="800" fill="#0F172A" text-anchor="middle" letter-spacing="0.5">RAILWAY DATA SOURCES</text>
+
+    <!-- Card 1: TMS -->
+    <g transform="translate(50, 115)">
+      <rect width="170" height="82" rx="6" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1" />
+      <path d="M18 18 L18 52 M32 18 L32 52 M14 26 L36 26 M14 35 L36 35 M14 44 L36 44" stroke="#1E293B" stroke-width="2" stroke-linecap="round" />
+      <text x="48" y="32" font-size="13" font-weight="700" fill="#0F172A">1. TMS</text>
+      <text x="48" y="48" font-size="10" font-weight="500" fill="#475569">Track defects &amp;</text>
+      <text x="48" y="61" font-size="10" font-weight="500" fill="#475569">overdue tasks</text>
+    </g>
+
+    <!-- Card 2: SMMS -->
+    <g transform="translate(50, 207)">
+      <rect width="170" height="82" rx="6" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1" />
+      <path d="M25 52 L25 18 M20 22 L30 22 M25 22 A 4 4 0 1 0 25 30 M25 34 A 4 4 0 1 0 25 42" stroke="#1E293B" stroke-width="2" fill="none" stroke-linecap="round" />
+      <text x="48" y="32" font-size="13" font-weight="700" fill="#0F172A">2. SMMS</text>
+      <text x="48" y="48" font-size="10" font-weight="500" fill="#475569">Signalling</text>
+      <text x="48" y="61" font-size="10" font-weight="500" fill="#475569">maintenance</text>
+    </g>
+
+    <!-- Card 3: TDMS -->
+    <g transform="translate(50, 299)">
+      <rect width="170" height="82" rx="6" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1" />
+      <path d="M16 20 L34 20 M25 20 L25 36 M18 36 L32 36 M25 36 L21 52 L29 52" stroke="#1E293B" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+      <text x="48" y="32" font-size="13" font-weight="700" fill="#0F172A">3. TDMS</text>
+      <text x="48" y="48" font-size="10" font-weight="500" fill="#475569">Traction / OHE</text>
+      <text x="48" y="61" font-size="10" font-weight="500" fill="#475569">maintenance</text>
+    </g>
+
+    <!-- Card 4: Train Timetable -->
+    <g transform="translate(50, 391)">
+      <rect width="170" height="82" rx="6" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1" />
+      <rect x="16" y="20" width="18" height="28" rx="3" fill="none" stroke="#1E293B" stroke-width="2" />
+      <line x1="16" y1="32" x2="34" y2="32" stroke="#1E293B" stroke-width="1.5" />
+      <circle cx="20" cy="42" r="2" fill="#1E293B" />
+      <circle cx="30" cy="42" r="2" fill="#1E293B" />
+      <text x="48" y="30" font-size="12" font-weight="700" fill="#0F172A">4. TIMETABLE</text>
+      <text x="48" y="46" font-size="10" font-weight="500" fill="#475569">Scheduled train</text>
+      <text x="48" y="59" font-size="10" font-weight="500" fill="#475569">movements</text>
+    </g>
+
+    <!-- Card 5: Goods Train Forecast -->
+    <g transform="translate(50, 483)">
+      <rect width="170" height="82" rx="6" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1" />
+      <rect x="14" y="24" width="22" height="18" rx="1" fill="none" stroke="#1E293B" stroke-width="2" />
+      <circle cx="19" cy="46" r="2.5" fill="#1E293B" />
+      <circle cx="31" cy="46" r="2.5" fill="#1E293B" />
+      <line x1="10" y1="42" x2="38" y2="42" stroke="#1E293B" stroke-width="1.5" />
+      <text x="48" y="30" font-size="12" font-weight="700" fill="#0F172A">5. GOODS FORECAST</text>
+      <text x="48" y="46" font-size="10" font-weight="500" fill="#475569">Unscheduled freight</text>
+      <text x="48" y="59" font-size="10" font-weight="500" fill="#475569">demands</text>
+    </g>
+
+    <!-- Card 6: Corridor Availability -->
+    <g transform="translate(50, 575)">
+      <rect width="170" height="82" rx="6" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1" />
+      <rect x="14" y="20" width="22" height="24" rx="2" fill="none" stroke="#1E293B" stroke-width="2" />
+      <path d="M18 16 L18 20 M32 16 L32 20 M14 28 L36 28" stroke="#1E293B" stroke-width="1.5" />
+      <text x="48" y="30" font-size="12" font-weight="700" fill="#0F172A">6. AVAILABILITY</text>
+      <text x="48" y="46" font-size="10" font-weight="500" fill="#475569">Corridor &amp; block</text>
+      <text x="48" y="59" font-size="10" font-weight="500" fill="#475569">opportunity windows</text>
+    </g>
+  </g>
+
+  <!-- Flow Arrow: Sec 01 -> Sec 02 -->
+  <path d="M 230 367 L 252 367" stroke="#3B82F6" stroke-width="2.5" fill="none" marker-end="url(#arrow)" />
+
+  <!-- SECTION 02 — DATA INTEGRATION & VALIDATION -->
+  <g id="sec-02">
+    <rect x="260" y="145" width="140" height="445" rx="8" fill="#FFFFFF" stroke="#3B82F6" stroke-width="1.5" filter="url(#shadow)" />
+    <rect x="260" y="145" width="140" height="36" rx="8" fill="#1E3A8A" />
+    <rect x="260" y="170" width="140" height="11" fill="#1E3A8A" />
+    <text x="330" y="168" font-size="10" font-weight="700" fill="#93C5FD" text-anchor="middle" letter-spacing="0.5">SECTION 02</text>
+    <text x="330" y="196" font-size="11" font-weight="800" fill="#0F172A" text-anchor="middle">DATA INTEGRATION</text>
+    <text x="330" y="210" font-size="10" font-weight="700" fill="#3B82F6" text-anchor="middle">&amp; VALIDATION</text>
+
+    <!-- Compact Vertical Process -->
+    <g transform="translate(275, 230)">
+      <rect width="110" height="42" rx="5" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1" />
+      <text x="55" y="25" font-size="11" font-weight="800" fill="#1E40AF" text-anchor="middle">INGEST</text>
+
+      <path d="M 55 42 L 55 58" stroke="#3B82F6" stroke-width="2" fill="none" marker-end="url(#arrow)" />
+
+      <rect y="60" width="110" height="42" rx="5" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1" />
+      <text x="55" y="85" font-size="11" font-weight="800" fill="#1E40AF" text-anchor="middle">VALIDATE</text>
+
+      <path d="M 55 102 L 55 118" stroke="#3B82F6" stroke-width="2" fill="none" marker-end="url(#arrow)" />
+
+      <rect y="120" width="110" height="42" rx="5" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1" />
+      <text x="55" y="145" font-size="11" font-weight="800" fill="#1E40AF" text-anchor="middle">NORMALIZE</text>
+
+      <path d="M 55 162 L 55 178" stroke="#3B82F6" stroke-width="2" fill="none" marker-end="url(#arrow)" />
+
+      <rect y="180" width="110" height="42" rx="5" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1" />
+      <text x="55" y="205" font-size="11" font-weight="800" fill="#1E40AF" text-anchor="middle">UNIFY</text>
+    </g>
+
+    <rect x="270" y="525" width="120" height="45" rx="4" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="3,3" />
+    <text x="330" y="543" font-size="10" font-weight="700" fill="#475569" text-anchor="middle">Clean • Standardize</text>
+    <text x="330" y="558" font-size="10" font-weight="700" fill="#475569" text-anchor="middle">• Link</text>
+  </g>
+
+  <!-- Flow Arrow: Sec 02 -> Sec 03 -->
+  <path d="M 400 367 L 418 367" stroke="#3B82F6" stroke-width="2.5" fill="none" marker-end="url(#arrow)" />
+
+  <!-- SECTION 03 — RAILWAY PLANNING MODEL -->
+  <g id="sec-03">
+    <rect x="425" y="120" width="200" height="495" rx="8" fill="#FFFFFF" stroke="#475569" stroke-width="1.5" filter="url(#shadow)" />
+    <rect x="430" y="180" width="190" height="425" fill="url(#trackPattern)" opacity="0.35" />
+
+    <rect x="425" y="120" width="200" height="36" rx="8" fill="#334155" />
+    <rect x="425" y="145" width="200" height="11" fill="#334155" />
+    <text x="525" y="141" font-size="10" font-weight="700" fill="#CBD5E1" text-anchor="middle" letter-spacing="0.5">SECTION 03</text>
+    <text x="525" y="172" font-size="11" font-weight="800" fill="#0F172A" text-anchor="middle">RAILWAY PLANNING MODEL</text>
+    <text x="525" y="186" font-size="9" font-weight="600" fill="#64748B" text-anchor="middle">Digital Planning Environment</text>
+
+    <!-- Layered Components Stack -->
+    <g transform="translate(440, 205)">
+      <rect width="170" height="52" rx="5" fill="#FFFFFF" stroke="#0F172A" stroke-width="1.5" filter="url(#shadow)" />
+      <text x="85" y="22" font-size="10" font-weight="800" fill="#0F172A" text-anchor="middle">NETWORK / SECTIONS</text>
+      <text x="85" y="38" font-size="9" font-weight="500" fill="#64748B" text-anchor="middle">Tracks, Stations, Blocks</text>
+
+      <rect y="64" width="170" height="52" rx="5" fill="#FFFFFF" stroke="#0F172A" stroke-width="1.5" filter="url(#shadow)" />
+      <text x="85" y="86" font-size="10" font-weight="800" fill="#0F172A" text-anchor="middle">ASSETS</text>
+      <text x="85" y="102" font-size="9" font-weight="500" fill="#64748B" text-anchor="middle">Track, OHE, Signals, Turnouts</text>
+
+      <rect y="128" width="170" height="52" rx="5" fill="#FFFFFF" stroke="#0F172A" stroke-width="1.5" filter="url(#shadow)" />
+      <text x="85" y="150" font-size="10" font-weight="800" fill="#0F172A" text-anchor="middle">MAINTENANCE TASKS</text>
+      <text x="85" y="166" font-size="9" font-weight="500" fill="#64748B" text-anchor="middle">Preventive, Periodic, Urgent</text>
+
+      <rect y="192" width="170" height="52" rx="5" fill="#FFFFFF" stroke="#0F172A" stroke-width="1.5" filter="url(#shadow)" />
+      <text x="85" y="214" font-size="10" font-weight="800" fill="#0F172A" text-anchor="middle">BLOCK WINDOWS</text>
+      <text x="85" y="230" font-size="9" font-weight="500" fill="#64748B" text-anchor="middle">Corridor gap opportunities</text>
+
+      <rect y="256" width="170" height="52" rx="5" fill="#FFFFFF" stroke="#0F172A" stroke-width="1.5" filter="url(#shadow)" />
+      <text x="85" y="278" font-size="10" font-weight="800" fill="#0F172A" text-anchor="middle">TRAIN MOVEMENTS</text>
+      <text x="85" y="294" font-size="9" font-weight="500" fill="#64748B" text-anchor="middle">Passenger &amp; freight schedules</text>
+
+      <rect y="320" width="170" height="52" rx="5" fill="#FFFFFF" stroke="#0F172A" stroke-width="1.5" filter="url(#shadow)" />
+      <text x="85" y="342" font-size="10" font-weight="800" fill="#0F172A" text-anchor="middle">CONSTRAINTS</text>
+      <text x="85" y="358" font-size="9" font-weight="500" fill="#64748B" text-anchor="middle">Safety rules &amp; resources</text>
+    </g>
+  </g>
+
+  <!-- Split Flow Arrows: Sec 03 -> Sec 04 (Engine A & Engine B) -->
+  <path d="M 625 315 L 640 315 L 640 245 L 652 245" stroke="#3B82F6" stroke-width="2" fill="none" marker-end="url(#arrow)" />
+  <path d="M 625 420 L 640 420 L 640 490 L 652 490" stroke="#3B82F6" stroke-width="2" fill="none" marker-end="url(#arrow)" />
+
+  <!-- SECTION 04 — INTELLIGENT PLANNING -->
+  <g id="sec-04">
+    <!-- ENGINE A: AI PRIORITY ENGINE -->
+    <g id="engine-a">
+      <rect x="660" y="100" width="200" height="250" rx="8" fill="#FFFFFF" stroke="#C2410C" stroke-width="1.5" filter="url(#shadow)" />
+      <rect x="660" y="100" width="200" height="32" rx="8" fill="#9A3412" />
+      <rect x="660" y="122" width="200" height="10" fill="#9A3412" />
+      <path d="M675 116 L685 116 M680 111 L680 121 M676 112 L684 120 M676 120 L684 112" stroke="#FFEDD5" stroke-width="1.5" />
+      <text x="768" y="121" font-size="11" font-weight="800" fill="#FFFFFF" text-anchor="middle">ENGINE A: AI PRIORITY</text>
+
+      <g transform="translate(672, 142)">
+        <text x="0" y="16" font-size="10" font-weight="700" fill="#9A3412">• Criticality Analysis</text>
+        <text x="0" y="32" font-size="10" font-weight="700" fill="#9A3412">• Urgency &amp; Wear Rate</text>
+        <text x="0" y="48" font-size="10" font-weight="700" fill="#9A3412">• Deadline Penalties</text>
+        <text x="0" y="64" font-size="10" font-weight="700" fill="#9A3412">• Asset Availability Impact</text>
+
+        <rect y="78" width="176" height="46" rx="5" fill="#FFEDD5" stroke="#FDBA74" stroke-width="1" />
+        <text x="88" y="96" font-size="9" font-weight="800" fill="#9A3412" text-anchor="middle">OUTPUT</text>
+        <text x="88" y="112" font-size="11" font-weight="800" fill="#C2410C" text-anchor="middle">TASK PRIORITY SCORE</text>
+      </g>
+    </g>
+
+    <!-- ENGINE B: CONSTRAINT MODEL -->
+    <g id="engine-b">
+      <rect x="660" y="370" width="200" height="245" rx="8" fill="#FFFFFF" stroke="#1E40AF" stroke-width="1.5" filter="url(#shadow)" />
+      <rect x="660" y="370" width="200" height="32" rx="8" fill="#1E3A8A" />
+      <rect x="660" y="392" width="200" height="10" fill="#1E3A8A" />
+      <circle cx="680" cy="386" r="5" fill="none" stroke="#BFDBFE" stroke-width="1.5" />
+      <text x="768" y="391" font-size="11" font-weight="800" fill="#FFFFFF" text-anchor="middle">ENGINE B: CONSTRAINT MODEL</text>
+
+      <g transform="translate(672, 412)">
+        <text x="0" y="16" font-size="10" font-weight="700" fill="#1E3A8A">• Train Movement Conflicts</text>
+        <text x="0" y="32" font-size="10" font-weight="700" fill="#1E3A8A">• Time Window Limits</text>
+        <text x="0" y="48" font-size="10" font-weight="700" fill="#1E3A8A">• Section Topologies</text>
+        <text x="0" y="64" font-size="10" font-weight="700" fill="#1E3A8A">• Resource &amp; Crew Limits</text>
+
+        <rect y="78" width="176" height="46" rx="5" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1" />
+        <text x="88" y="96" font-size="9" font-weight="800" fill="#1E3A8A" text-anchor="middle">OUTPUT</text>
+        <text x="88" y="112" font-size="11" font-weight="800" fill="#1D4ED8" text-anchor="middle">FEASIBLE COMBINATIONS</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Convergence Arrows: Sec 04 (A & B) -> Sec 05 -->
+  <path d="M 860 245 L 878 245 L 878 320 L 888 320" stroke="#C2410C" stroke-width="2" fill="none" marker-end="url(#arrow-copper)" />
+  <path d="M 860 490 L 878 490 L 878 410 L 888 410" stroke="#1E40AF" stroke-width="2" fill="none" marker-end="url(#arrow)" />
+
+  <!-- SECTION 05 — CORE OPTIMIZATION ENGINE -->
+  <g id="sec-05">
+    <rect x="895" y="80" width="240" height="555" rx="10" fill="#FFFFFF" stroke="#0F172A" stroke-width="2" filter="url(#shadow-md)" />
+    <rect x="895" y="80" width="240" height="54" rx="10" fill="#0F172A" />
+    <rect x="895" y="124" width="240" height="10" fill="#0F172A" />
+    <text x="1015" y="101" font-size="10" font-weight="700" fill="#38BDF8" text-anchor="middle" letter-spacing="1">SECTION 05 — CORE OPTIMIZER</text>
+    <text x="1015" y="118" font-size="13" font-weight="900" fill="#FFFFFF" text-anchor="middle">OR-TOOLS CP-SAT ENGINE</text>
+    <text x="1015" y="148" font-size="10" font-weight="700" fill="#475569" text-anchor="middle">Multi-Department Block Scheduling</text>
+
+    <!-- Objective Box -->
+    <g transform="translate(910, 165)">
+      <rect width="210" height="195" rx="6" fill="#F8FAFC" stroke="#0284C7" stroke-width="1.5" />
+      <rect x="0" y="0" width="210" height="26" rx="6" fill="#0284C7" />
+      <rect x="0" y="20" width="210" height="6" fill="#0284C7" />
+      <text x="105" y="17" font-size="11" font-weight="800" fill="#FFFFFF" text-anchor="middle">OBJECTIVE FUNCTION</text>
+
+      <g transform="translate(15, 42)">
+        <text x="0" y="15" font-size="11" font-weight="800" fill="#DC2626">▼ Minimize:</text>
+        <text x="15" y="32" font-size="10" font-weight="600" fill="#334155">• Total Asset Downtime</text>
+        <text x="15" y="48" font-size="10" font-weight="600" fill="#334155">• Train Delay &amp; Cancellation</text>
+        <text x="15" y="64" font-size="10" font-weight="600" fill="#334155">• Block Conflicts &amp; Overlaps</text>
+
+        <text x="0" y="90" font-size="11" font-weight="800" fill="#16A34A">▲ Maximize:</text>
+        <text x="15" y="107" font-size="10" font-weight="600" fill="#334155">• Block Corridor Utilization</text>
+        <text x="15" y="123" font-size="10" font-weight="600" fill="#334155">• Maintenance Completion Rate</text>
+        <text x="15" y="139" font-size="10" font-weight="600" fill="#334155">• Multi-Dept Coordinated Blocks</text>
+      </g>
+    </g>
+
+    <!-- Constraints Box -->
+    <g transform="translate(910, 375)">
+      <rect width="210" height="180" rx="6" fill="#F8FAFC" stroke="#475569" stroke-width="1.5" />
+      <rect x="0" y="0" width="210" height="26" rx="6" fill="#475569" />
+      <rect x="0" y="20" width="210" height="6" fill="#475569" />
+      <text x="105" y="17" font-size="11" font-weight="800" fill="#FFFFFF" text-anchor="middle">HARD &amp; SOFT CONSTRAINTS</text>
+
+      <g transform="translate(15, 42)">
+        <text x="0" y="16" font-size="10" font-weight="700" fill="#1E293B">1. Operational:</text>
+        <text x="95" y="16" font-size="10" font-weight="500" fill="#475569">Train Headways</text>
+
+        <text x="0" y="38" font-size="10" font-weight="700" fill="#1E293B">2. Infrastructure:</text>
+        <text x="95" y="38" font-size="10" font-weight="500" fill="#475569">Single/Double track</text>
+
+        <text x="0" y="60" font-size="10" font-weight="700" fill="#1E293B">3. Resource:</text>
+        <text x="95" y="60" font-size="10" font-weight="500" fill="#475569">Crew &amp; Machinery</text>
+
+        <text x="0" y="82" font-size="10" font-weight="700" fill="#1E293B">4. Safety/Policy:</text>
+        <text x="95" y="82" font-size="10" font-weight="500" fill="#475569">Mandatory gaps</text>
+
+        <rect x="0" y="98" width="180" height="28" rx="4" fill="#E2E8F0" />
+        <text x="90" y="116" font-size="9" font-weight="800" fill="#0F172A" text-anchor="middle">CONSTRAINT SATISFACTION (CP)</text>
+      </g>
+    </g>
+
+    <text x="1015" y="580" font-size="9" font-weight="700" fill="#059669" text-anchor="middle">PROVEN MATHEMATICAL OPTIMIZER</text>
+    <text x="1015" y="594" font-size="9" font-weight="600" fill="#64748B" text-anchor="middle">(Exact &amp; Deterministic Solving)</text>
+  </g>
+
+  <!-- Flow Arrow: Sec 05 -> Sec 06 -->
+  <path d="M 1135 367 L 1153 367" stroke="#3B82F6" stroke-width="2.5" fill="none" marker-end="url(#arrow)" />
+
+  <!-- SECTION 06 — OPTIMIZED BLOCK PLAN -->
+  <g id="sec-06">
+    <rect x="1160" y="100" width="230" height="535" rx="8" fill="#FFFFFF" stroke="#059669" stroke-width="1.5" filter="url(#shadow)" />
+    <rect x="1160" y="100" width="230" height="36" rx="8" fill="#047857" />
+    <rect x="1160" y="125" width="230" height="11" fill="#047857" />
+    <text x="1275" y="122" font-size="10" font-weight="700" fill="#A7F3D0" text-anchor="middle" letter-spacing="0.5">SECTION 06</text>
+    <text x="1275" y="151" font-size="12" font-weight="800" fill="#0F172A" text-anchor="middle">OPTIMIZED BLOCK PLAN</text>
+    <text x="1275" y="166" font-size="10" font-weight="700" fill="#059669" text-anchor="middle">Weekly / Monthly Master Schedule</text>
+
+    <!-- Compact Railway Gantt Diagram Visual -->
+    <g transform="translate(1172, 185)">
+      <rect width="206" height="310" rx="6" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1" />
+
+      <!-- Timeline Header -->
+      <line x1="50" y1="25" x2="198" y2="25" stroke="#94A3B8" stroke-width="1" />
+      <text x="55" y="18" font-size="8" font-weight="700" fill="#64748B">06:00</text>
+      <text x="100" y="18" font-size="8" font-weight="700" fill="#64748B">10:00</text>
+      <text x="145" y="18" font-size="8" font-weight="700" fill="#64748B">14:00</text>
+      <text x="185" y="18" font-size="8" font-weight="700" fill="#64748B">18:00</text>
+
+      <!-- Grid lines -->
+      <line x1="60" y1="25" x2="60" y2="240" stroke="#E2E8F0" stroke-width="1" stroke-dasharray="2,2" />
+      <line x1="105" y1="25" x2="105" y2="240" stroke="#E2E8F0" stroke-width="1" stroke-dasharray="2,2" />
+      <line x1="150" y1="25" x2="150" y2="240" stroke="#E2E8F0" stroke-width="1" stroke-dasharray="2,2" />
+
+      <!-- TRAIN ROWS -->
+      <text x="8" y="45" font-size="9" font-weight="800" fill="#1E293B">TRAIN 1</text>
+      <rect x="52" y="35" width="45" height="14" rx="2" fill="#3B82F6" />
+      <rect x="110" y="35" width="75" height="14" rx="2" fill="#3B82F6" />
+
+      <text x="8" y="70" font-size="9" font-weight="800" fill="#1E293B">TRAIN 2</text>
+      <rect x="65" y="60" width="80" height="14" rx="2" fill="#1D4ED8" />
+
+      <text x="8" y="95" font-size="9" font-weight="800" fill="#1E293B">TRAIN 3</text>
+      <rect x="135" y="85" width="55" height="14" rx="2" fill="#3B82F6" />
+
+      <line x1="8" y1="110" x2="198" y2="110" stroke="#CBD5E1" stroke-width="1" />
+
+      <!-- MAINTENANCE ROWS -->
+      <text x="8" y="130" font-size="9" font-weight="800" fill="#C2410C">ENGG</text>
+      <rect x="62" y="120" width="70" height="16" rx="3" fill="#FDBA74" stroke="#C2410C" stroke-width="1" />
+      <text x="97" y="132" font-size="8" font-weight="800" fill="#7C2D12" text-anchor="middle">TRACK BLOCK</text>
+
+      <text x="8" y="160" font-size="9" font-weight="800" fill="#059669">TRD/OHE</text>
+      <rect x="62" y="150" width="70" height="16" rx="3" fill="#A7F3D0" stroke="#059669" stroke-width="1" />
+      <text x="97" y="162" font-size="8" font-weight="800" fill="#064E3B" text-anchor="middle">OHE SHADOW</text>
+
+      <text x="8" y="190" font-size="9" font-weight="800" fill="#7C3AED">S &amp; T</text>
+      <rect x="62" y="180" width="70" height="16" rx="3" fill="#DDD6FE" stroke="#7C3AED" stroke-width="1" />
+      <text x="97" y="192" font-size="8" font-weight="800" fill="#4C1D95" text-anchor="middle">SIGNAL SHADOW</text>
+
+      <!-- Highlight Coordinated Window -->
+      <rect x="60" y="115" width="74" height="86" rx="4" fill="none" stroke="#2563EB" stroke-width="1.5" stroke-dasharray="3,3" />
+
+      <!-- Legend -->
+      <rect x="10" y="220" width="186" height="80" rx="4" fill="#FFFFFF" stroke="#E2E8F0" />
+      <rect x="18" y="232" width="12" height="8" fill="#3B82F6" />
+      <text x="36" y="239" font-size="8" font-weight="600" fill="#475569">Train Movement</text>
+
+      <rect x="105" y="232" width="12" height="8" fill="#FDBA74" stroke="#C2410C" stroke-width="0.5" />
+      <text x="123" y="239" font-size="8" font-weight="600" fill="#475569">Main Block</text>
+
+      <rect x="18" y="250" width="12" height="8" fill="#A7F3D0" stroke="#059669" stroke-width="0.5" />
+      <text x="36" y="257" font-size="8" font-weight="600" fill="#475569">Coordinated Integrated Block (Shadow)</text>
+
+      <text x="103" y="284" font-size="9" font-weight="900" fill="#047857" text-anchor="middle">3 DEPARTMENTS • 1 WINDOW</text>
+    </g>
+
+    <!-- Key Concept Label -->
+    <rect x="1172" y="510" width="206" height="110" rx="6" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1" />
+    <text x="1275" y="532" font-size="11" font-weight="900" fill="#065F46" text-anchor="middle">COORDINATED</text>
+    <text x="1275" y="550" font-size="11" font-weight="900" fill="#065F46" text-anchor="middle">CONFLICT-FREE</text>
+    <text x="1275" y="568" font-size="11" font-weight="900" fill="#065F46" text-anchor="middle">RESOURCE-FEASIBLE</text>
+    <text x="1275" y="592" font-size="9" font-weight="600" fill="#047857" text-anchor="middle">Maximizes track availability</text>
+    <text x="1275" y="606" font-size="9" font-weight="600" fill="#047857" text-anchor="middle">without disruptive delays</text>
+  </g>
+
+  <!-- Flow Arrow: Sec 06 -> Sec 07 -->
+  <path d="M 1390 367 L 1408 367" stroke="#3B82F6" stroke-width="2.5" fill="none" marker-end="url(#arrow)" />
+
+  <!-- SECTION 07 — DECISION SUPPORT -->
+  <g id="sec-07">
+    <rect x="1415" y="120" width="150" height="495" rx="8" fill="#FFFFFF" stroke="#0F172A" stroke-width="1.5" filter="url(#shadow)" />
+    <rect x="1415" y="120" width="150" height="36" rx="8" fill="#0F172A" />
+    <rect x="1415" y="145" width="150" height="11" fill="#0F172A" />
+    <text x="1490" y="141" font-size="10" font-weight="700" fill="#94A3B8" text-anchor="middle" letter-spacing="0.5">SECTION 07</text>
+    <text x="1490" y="171" font-size="11" font-weight="800" fill="#0F172A" text-anchor="middle">PLANNER DASHBOARD</text>
+
+    <!-- 4 Compact Interface Cards -->
+    <g transform="translate(1425, 190)">
+      <!-- Card 1 -->
+      <rect width="130" height="68" rx="5" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1" />
+      <text x="10" y="20" font-size="10" font-weight="800" fill="#0F172A">PLAN VIEW</text>
+      <text x="10" y="36" font-size="9" font-weight="500" fill="#475569">• Weekly &amp; Monthly</text>
+      <text x="10" y="50" font-size="9" font-weight="500" fill="#475569">• Sectional Gantt</text>
+
+      <!-- Card 2 -->
+      <rect y="78" width="130" height="68" rx="5" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1" />
+      <text x="10" y="98" font-size="10" font-weight="800" fill="#0F172A">EXPLAIN</text>
+      <text x="10" y="114" font-size="9" font-weight="500" fill="#475569">• Why this plan</text>
+      <text x="10" y="128" font-size="9" font-weight="500" fill="#475569">• Trade-off insights</text>
+
+      <!-- Card 3 -->
+      <rect y="156" width="130" height="68" rx="5" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1" />
+      <text x="10" y="176" font-size="10" font-weight="800" fill="#0F172A">WHAT-IF</text>
+      <text x="10" y="192" font-size="9" font-weight="500" fill="#475569">• Scenario analysis</text>
+      <text x="10" y="206" font-size="9" font-weight="500" fill="#475569">• Delay impact test</text>
+
+      <!-- Card 4 -->
+      <rect y="234" width="130" height="68" rx="5" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1" />
+      <text x="10" y="254" font-size="10" font-weight="800" fill="#0F172A">REVIEW &amp; MODIFY</text>
+      <text x="10" y="270" font-size="9" font-weight="500" fill="#475569">• Manual override</text>
+      <text x="10" y="284" font-size="9" font-weight="500" fill="#475569">• Section approval</text>
+    </g>
+
+    <!-- End Target Approval Box -->
+    <g transform="translate(1425, 505)">
+      <rect width="130" height="90" rx="6" fill="#15803D" stroke="#166534" stroke-width="1" filter="url(#shadow)" />
+      <circle cx="65" cy="28" r="12" fill="#FFFFFF" />
+      <path d="M59 28 L63 32 L71 22" stroke="#15803D" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+      <text x="65" y="56" font-size="11" font-weight="900" fill="#FFFFFF" text-anchor="middle">PLANNER</text>
+      <text x="65" y="70" font-size="11" font-weight="900" fill="#FFFFFF" text-anchor="middle">APPROVAL</text>
+      <text x="65" y="82" font-size="8" font-weight="600" fill="#DCFCE7" text-anchor="middle">Human-in-the-loop</text>
+    </g>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- SECONDARY LAYER — OUR DIFFERENTIATOR (BOTTOM 18% LEVEL) -->
+  <!-- ========================================================================= -->
+
+  <g id="secondary-differentiator-layer">
+    <rect x="40" y="705" width="1525" height="160" rx="8" fill="#FFFBEB" stroke="#F59E0B" stroke-width="1.5" filter="url(#shadow)" />
+
+    <rect x="40" y="705" width="220" height="28" rx="8" fill="#B45309" />
+    <rect x="40" y="723" width="220" height="10" fill="#B45309" />
+    <text x="150" y="723" font-size="10" font-weight="800" fill="#FFFFFF" text-anchor="middle" letter-spacing="0.5">OUR DIFFERENTIATOR</text>
+
+    <text x="280" y="724" font-size="13" font-weight="900" fill="#78350F">EVENT-AWARE LOCAL RE-OPTIMIZATION</text>
+    <text x="560" y="724" font-size="10" font-weight="600" fill="#92400E">"Adapt to real-time changes. Re-optimize ONLY what is affected — leaving 90%+ of the master plan stable."</text>
+
+    <!-- Stage 1: Operational Change -->
+    <g transform="translate(55, 742)">
+      <rect width="250" height="110" rx="6" fill="#FFFFFF" stroke="#FCD34D" stroke-width="1" />
+      <rect x="0" y="0" width="250" height="22" rx="6" fill="#FEF3C7" />
+      <text x="125" y="15" font-size="10" font-weight="800" fill="#92400E" text-anchor="middle">1. OPERATIONAL CHANGE</text>
+
+      <g transform="translate(12, 32)">
+        <text x="0" y="13" font-size="9" font-weight="600" fill="#78350F">• Train delay / cancellation</text>
+        <text x="0" y="28" font-size="9" font-weight="600" fill="#78350F">• Emergency breakdown block</text>
+        <text x="0" y="43" font-size="9" font-weight="600" fill="#78350F">• Unscheduled maintenance request</text>
+        <text x="0" y="58" font-size="9" font-weight="600" fill="#78350F">• Crew / machine unavailability</text>
+      </g>
+    </g>
+
+    <path d="M 305 797 L 325 797" stroke="#B45309" stroke-width="2" fill="none" marker-end="url(#arrow-copper)" />
+
+    <!-- Stage 2: Impact Analysis -->
+    <g transform="translate(330, 742)">
+      <rect width="240" height="110" rx="6" fill="#FFFFFF" stroke="#FCD34D" stroke-width="1" />
+      <rect x="0" y="0" width="240" height="22" rx="6" fill="#FEF3C7" />
+      <text x="120" y="15" font-size="10" font-weight="800" fill="#92400E" text-anchor="middle">2. IMPACT ANALYSIS</text>
+
+      <g transform="translate(12, 32)">
+        <text x="0" y="14" font-size="9" font-weight="600" fill="#78350F">• Identify affected sections only</text>
+        <text x="0" y="32" font-size="9" font-weight="600" fill="#78350F">• Detect conflicting tasks &amp; trains</text>
+        <text x="0" y="50" font-size="9" font-weight="600" fill="#78350F">• Isolate disruption scope radius</text>
+      </g>
+    </g>
+
+    <path d="M 570 797 L 590 797" stroke="#B45309" stroke-width="2" fill="none" marker-end="url(#arrow-copper)" />
+
+    <!-- Stage 3: Affected Tasks Only -->
+    <g transform="translate(595, 742)">
+      <rect width="240" height="110" rx="6" fill="#FFFFFF" stroke="#FCD34D" stroke-width="1" />
+      <rect x="0" y="0" width="240" height="22" rx="6" fill="#FEF3C7" />
+      <text x="120" y="15" font-size="10" font-weight="800" fill="#92400E" text-anchor="middle">3. AFFECTED TASKS ONLY</text>
+
+      <g transform="translate(12, 32)">
+        <text x="0" y="14" font-size="9" font-weight="600" fill="#78350F">• Filter strictly impacted tasks</text>
+        <text x="0" y="32" font-size="9" font-weight="600" fill="#78350F">• Freeze unaffected master schedule</text>
+        <text x="0" y="50" font-size="9" font-weight="600" fill="#78350F">• Limit re-planning window bounds</text>
+      </g>
+    </g>
+
+    <path d="M 835 797 L 855 797" stroke="#B45309" stroke-width="2" fill="none" marker-end="url(#arrow-copper)" />
+
+    <!-- Stage 4: Local Re-Optimization -->
+    <g transform="translate(860, 742)">
+      <rect width="250" height="110" rx="6" fill="#FFFFFF" stroke="#FCD34D" stroke-width="1" />
+      <rect x="0" y="0" width="250" height="22" rx="6" fill="#FEF3C7" />
+      <text x="125" y="15" font-size="10" font-weight="800" fill="#92400E" text-anchor="middle">4. LOCAL RE-OPTIMIZATION</text>
+
+      <g transform="translate(12, 32)">
+        <text x="0" y="14" font-size="9" font-weight="600" fill="#78350F">• Fast sub-problem CP-SAT solve</text>
+        <text x="0" y="32" font-size="9" font-weight="600" fill="#78350F">• Maintain overall plan feasibility</text>
+        <text x="0" y="50" font-size="9" font-weight="600" fill="#78350F">• Zero ripple-effect on other divisions</text>
+      </g>
+    </g>
+
+    <path d="M 1110 797 L 1130 797" stroke="#B45309" stroke-width="2" fill="none" marker-end="url(#arrow-copper)" />
+
+    <!-- Stage 5: BEFORE vs AFTER Scheduling Mini Visual -->
+    <g transform="translate(1135, 742)">
+      <rect width="415" height="110" rx="6" fill="#FFFFFF" stroke="#B45309" stroke-width="1.5" />
+      <rect x="0" y="0" width="415" height="22" rx="6" fill="#B45309" />
+      <text x="207" y="15" font-size="10" font-weight="800" fill="#FFFFFF" text-anchor="middle">BEFORE vs AFTER RE-OPTIMIZATION TIMELINE</text>
+
+      <g transform="translate(15, 30)">
+        <!-- BEFORE Timeline -->
+        <text x="0" y="20" font-size="9" font-weight="800" fill="#78350F">BEFORE</text>
+        <rect x="55" y="10" width="80" height="12" rx="2" fill="#94A3B8" />
+        <rect x="140" y="10" width="60" height="12" rx="2" fill="#EF4444" />
+        <text x="170" y="19" font-size="7" font-weight="800" fill="#FFFFFF" text-anchor="middle">DELAY</text>
+        <rect x="205" y="10" width="180" height="12" rx="2" fill="#94A3B8" />
+
+        <!-- Arrow Down -->
+        <path d="M 170 26 L 170 36" stroke="#C2410C" stroke-width="1.5" fill="none" marker-end="url(#arrow-copper)" />
+        <text x="240" y="34" font-size="8" font-weight="800" fill="#C2410C">LOCAL ADJUSTMENT ONLY</text>
+
+        <!-- AFTER Timeline -->
+        <text x="0" y="58" font-size="9" font-weight="800" fill="#15803D">AFTER</text>
+        <rect x="55" y="48" width="80" height="12" rx="2" fill="#94A3B8" />
+        <text x="95" y="57" font-size="7" font-weight="700" fill="#FFFFFF" text-anchor="middle">UNTOUCHED</text>
+
+        <rect x="140" y="48" width="60" height="12" rx="2" fill="#F59E0B" stroke="#B45309" stroke-width="1" />
+        <text x="170" y="57" font-size="7" font-weight="800" fill="#78350F" text-anchor="middle">SHIFTED</text>
+
+        <rect x="205" y="48" width="180" height="12" rx="2" fill="#94A3B8" />
+        <text x="295" y="57" font-size="7" font-weight="700" fill="#FFFFFF" text-anchor="middle">UNTOUCHED MASTER PLAN</text>
+      </g>
+    </g>
+
+  </g>
+</svg>
